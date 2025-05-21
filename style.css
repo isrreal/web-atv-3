@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+.my-site-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1abc9c;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+}
+
+.navbar#swap-layout {
+    align-items: flex-end;
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+#optimal3RDF {
+    width: 35%;
+}
+
+#roman-empire-trajan-image {
+    width: 40%;
+    margin: auto;
+}
+
+#about {
+    background-color: #f1f1f1;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: #ddd;
+}
+

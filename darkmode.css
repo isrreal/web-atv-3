@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Corpo geral */
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Cabeçalho do site */
+.my-site-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #159d86; /* tom mais escuro do original */
+    color: white;
+}
+
+/* Barra de navegação */
+.navbar {
+    display: flex;
+    background-color: #1e1e1e;
+    position: sticky;
+    top: 0;
+}
+
+.navbar#swap-layout {
+    align-items: flex-end;
+}
+
+.navbar a {
+    color: #f0f0f0;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    color: #1abc9c;
+}
+
+/* Layout principal */
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Seções específicas */
+#optimal3RDF {
+    width: 35%;
+}
+
+#roman-empire-trajan-image {
+    width: 40%;
+    margin: auto;
+}
+
+/* Seção "about" */
+#about {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+/* Rodapé */
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: #1e1e1e;
+    color: #ccc;
+}
+

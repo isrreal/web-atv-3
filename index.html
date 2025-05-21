@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- Link com ID para troca de tema -->
+    <link id="layout-style" rel="stylesheet" href="style.css">
+
+    <script>
+        function swapLayout() {
+            const link = document.getElementById("layout-style");
+
+            if (link.getAttribute("href") === "style.css") {
+                link.setAttribute("href", "darkmode.css");
+            } else {
+                link.setAttribute("href", "style.css");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="my-site-header"> 
+        <h1>My Website</h1>
+        <p>With a <b>flexible</b> layout.</p>
+    </div>
+    
+    <div class="navbar">
+        <a href="#home">Link 1</a>
+        <a href="#news">Link 2</a>
+        <a href="#contact">Link 3</a>
+        <a href="#about">Link 4</a>
+        <button onclick="swapLayout()">Modo escuro</button>
+    </div>
+
+    <div class="main">
+        <div id="about">
+            <h2 id="contexto">Contexto</h2>
+            <p>
+                Durante o terceiro século da Era Comum, o Império Romano atingiu seu auge, dominando vastas regiões da Europa, Ásia e África com cerca de cinquenta legiões espalhadas em territórios como Gália, Egito, Britânia e Roma. A estratégia de defesa então adotada era avançada, com fortificações ao longo das fronteiras para impedir invasões.
+            </p>
+            <p>
+                Com o declínio militar no século IV, e a redução das legiões pela metade, o imperador Constantino, o Grande, implementou a estratégia de defesa em profundidade. Essa nova abordagem dividia as legiões restantes em grupos distribuídos entre os estados do império. Um estado era considerado protegido se abrigasse um grupo, ou protegível se vizinho a um estado com dois grupos, permitindo mobilidade e resposta rápida, enquanto milícias locais retardavam os inimigos.
+            </p>
+            <p>
+                Essa lógica influenciou outras potências imperiais. O Império Britânico, no início do século XX, também abandonou a defesa avançada em favor da defesa em profundidade, diante da redução de suas frotas navais. Já na Segunda Guerra Mundial, o general americano Douglas MacArthur aplicou conceito semelhante no Pacífico, com a estratégia de “salto de ilhas”, deslocando tropas sem deixar regiões estratégicas vulneráveis.
+            </p>
+
+            <figure>
+                <img src="images/Optimal-3RDF.jpg" alt="Image" id="optimal3RDF">
+            </figure>
+
+            <h5 id="problema-de-otimizacao">Problemas de Otimização</h5>
+            <p>
+                De acordo com <strong>Papadimitriou e Steiglitz (1982)</strong>, um problema de otimização (PO) é composto por três elementos fundamentais:
+                um conjunto de instâncias (entradas), um conjunto de soluções viáveis <em>Sol(I)</em> para cada instância <em>I</em>, e uma função objetivo <em>val(S)</em>,
+                que associa um custo numérico a cada solução viável <em>S ∈ Sol(I)</em>.
+            </p>
+            <p>
+                Se o conjunto de soluções viáveis <em>Sol(I)</em> for vazio, a instância <em>I</em> é considerada inviável; caso contrário, ela é viável.
+                O objetivo de um PO é encontrar a melhor solução entre todas as viáveis.
+            </p>
+            <p>
+                Esses problemas podem ser classificados como de <strong>minimização</strong> ou <strong>maximização</strong>, dependendo se se busca a solução com menor ou maior custo, respectivamente.
+                Uma solução viável com custo ótimo é chamada de <strong>solução ótima</strong>, e seu valor para uma instância <em>I</em> é denotado por <em>OPT(I)</em>, onde <em>OPT(I) = val(S*)</em>, sendo <em>S*</em> uma solução ótima.
+                Vale destacar que <em>OPT(I)</em> só está definido se a instância for viável.
+            </p>
+            <p>
+                Problemas de otimização são, em geral, desafiadores do ponto de vista computacional. A teoria da complexidade os classifica da seguinte forma:
+            </p>
+            <ul>
+                <li><strong>P</strong>: Problemas solucionáveis em tempo polinomial.</li>
+                <li><strong>NP</strong>: Problemas de decisão (respostas SIM/NÃO) cujas soluções podem ser verificadas em tempo polinomial.</li>
+                <li><strong>NP-difícil (NP-hard)</strong>: Problemas aos quais todo problema em NP pode ser reduzido em tempo polinomial, indicando alta complexidade computacional.</li>
+                <li><strong>NP-completo</strong>: Problemas que pertencem tanto à classe NP quanto à classe NP-difícil, representando muitos problemas reais sem soluções conhecidas em tempo polinomial.</li>
+            </ul>
+
+            <h5 id="dominacao-romana">Dominação Romana em Grafos</h5>
+            <p>
+                A quantidade de legiões protegendo cada estado é indicada por um rótulo em cada vértice. 
+                A função <strong>h: V(G) → {0, 1, 2}</strong> é chamada de <strong>função de dominação romana (FDR)</strong> em G, 
+                se todo vértice <em>v ∈ V(G)</em> para o qual <em>h(v) = 0</em> está conectado a pelo menos um vértice <em>w</em> 
+                tal que <em>h(w) = 2</em> (Cockayne et al., 2004).
+            </p>
+            <p>
+                Portanto, utilizando a terminologia de Constantino, a restrição imposta por uma função de dominação romana 
+                equivale à exigência de que todo estado não protegido deve ser <strong>protegível</strong> (Stewart, 1999).
+            </p>
+            <p>
+                O <strong>peso</strong> da função de dominação romana é denotado por 
+                <em>h(V(G)) = ∑<sub>v∈V(G)</sub> h(v)</em> (Cockayne et al., 2004). 
+                Uma função de dominação romana é <strong>ótima</strong> se ela tem o menor peso possível.
+            </p>
+            <p>
+                O <strong>número de dominação romana</strong> é o menor peso que uma função de dominação romana de G pode ter 
+                e é denotado por <strong>γ<sub>R</sub>(G)</strong>. O <strong>Problema de Dominação Romana (PDR)</strong> consiste em determinar 
+                <em>γ<sub>R</sub>(G)</em> para um grafo arbitrário G.
+            </p>
+        </div>
+        <div id="content">
+            <h2>Mapa do Império Romano</h2>
+            <p>Fonte histórica, 117 d.C.</p>
+
+            <figure>
+                <img id="roman-empire-trajan-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Roman_Empire_Trajan_117AD.png/1024px-Roman_Empire_Trajan_117AD.png" alt="Mapa do Império Romano no ano de 117 d.C.">
+                <figcaption>
+                    Extensão máxima do Império Romano durante o reinado do imperador Trajano (98–117 d.C.).
+                </figcaption>
+            </figure>
+
+            <p>
+                Em 117 d.C., sob o governo do imperador Trajano, o Império Romano atingiu sua maior extensão territorial, abrangendo cerca de 5 milhões de km². O domínio romano ia da Britânia (atual Reino Unido) até a Mesopotâmia (atual Iraque), incluindo quase toda a Europa Ocidental, o Norte da África e parte do Oriente Médio.
+                Esse período é conhecido como <strong>Pax Romana</strong> — uma era de relativa paz e estabilidade que durou mais de dois séculos.
+            </p>
+
+            <h2>Visualização de Grafo Histórico</h2>
+            <p>Reconstrução computacional, 2024</p>
+
+            <figure>
+                <img src="images/graph-roman-empire.png" alt="Grafo representando relações entre províncias do Império Romano" id="optimal3RDF">
+                <figcaption>
+                    Representação computacional das conexões entre províncias romanas usando técnicas de Teoria dos Grafos.
+                </figcaption>
+            </figure>
+
+            <p>
+                A figura acima mostra um grafo em que os nós representam províncias do Império Romano e as arestas indicam rotas comerciais, militares ou administrativas. Técnicas modernas como otimização por algoritmos genéticos e dominância romana são utilizadas para estudar estruturas históricas e logísticas do império.
+                Essas abordagens ajudam a identificar centros estratégicos e rotas críticas, revelando padrões complexos da organização territorial romana.
+            </p>
+        </div>
+
+</div>
+    
+    <div class="footer">
+        <p>&copy; 2025 - Todos os direitos reservados.</p> 
+    </div>
+</body>
+</html>
+
